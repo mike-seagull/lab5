@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://lab5" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://lab5" xmlns:intf="http://lab5" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://lab5" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="cmToIn">
+    <complexType>
+     <sequence>
+      <element name="cm" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cmToInResponse">
+    <complexType>
+     <sequence>
+      <element name="cmToInReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="kmToMi">
+    <complexType>
+     <sequence>
+      <element name="km" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="kmToMiResponse">
+    <complexType>
+     <sequence>
+      <element name="kmToMiReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="dummyMethod">
+    <complexType/>
+   </element>
+   <element name="dummyMethodResponse">
+    <complexType>
+     <sequence>
+      <element name="dummyMethodReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToMi">
+    <complexType>
+     <sequence>
+      <element name="ft" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToMiResponse">
+    <complexType>
+     <sequence>
+      <element name="ftToMiReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="miToFt">
+    <complexType>
+     <sequence>
+      <element name="mi" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="miToFtResponse">
+    <complexType>
+     <sequence>
+      <element name="miToFtReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToIn">
+    <complexType>
+     <sequence>
+      <element name="ft" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToInResponse">
+    <complexType>
+     <sequence>
+      <element name="ftToInReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="inToFt">
+    <complexType>
+     <sequence>
+      <element name="in" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="inToFtResponse">
+    <complexType>
+     <sequence>
+      <element name="inToFtReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToM">
+    <complexType>
+     <sequence>
+      <element name="ft" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ftToMResponse">
+    <complexType>
+     <sequence>
+      <element name="ftToMReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mToFt">
+    <complexType>
+     <sequence>
+      <element name="m" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mToFtResponse">
+    <complexType>
+     <sequence>
+      <element name="mToFtReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="daysToMonths">
+    <complexType>
+     <sequence>
+      <element name="days" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="daysToMonthsResponse">
+    <complexType>
+     <sequence>
+      <element name="daysToMonthsReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="monthsToDays">
+    <complexType>
+     <sequence>
+      <element name="months" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="monthsToDaysResponse">
+    <complexType>
+     <sequence>
+      <element name="monthsToDaysReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="miToKm">
+    <complexType>
+     <sequence>
+      <element name="mi" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="miToKmResponse">
+    <complexType>
+     <sequence>
+      <element name="miToKmReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="weeksToYears">
+    <complexType>
+     <sequence>
+      <element name="weeks" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="weeksToYearsResponse">
+    <complexType>
+     <sequence>
+      <element name="weeksToYearsReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="inToCm">
+    <complexType>
+     <sequence>
+      <element name="inches" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="inToCmResponse">
+    <complexType>
+     <sequence>
+      <element name="inToCmReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="yearsToWeeks">
+    <complexType>
+     <sequence>
+      <element name="years" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="yearsToWeeksResponse">
+    <complexType>
+     <sequence>
+      <element name="yearsToWeeksReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="miToKmResponse">
+
+      <wsdl:part element="impl:miToKmResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="yearsToWeeksResponse">
+
+      <wsdl:part element="impl:yearsToWeeksResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cmToInResponse">
+
+      <wsdl:part element="impl:cmToInResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="yearsToWeeksRequest">
+
+      <wsdl:part element="impl:yearsToWeeks" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="daysToMonthsRequest">
+
+      <wsdl:part element="impl:daysToMonths" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="daysToMonthsResponse">
+
+      <wsdl:part element="impl:daysToMonthsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="monthsToDaysRequest">
+
+      <wsdl:part element="impl:monthsToDays" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="miToFtResponse">
+
+      <wsdl:part element="impl:miToFtResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="weeksToYearsRequest">
+
+      <wsdl:part element="impl:weeksToYears" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="inToCmResponse">
+
+      <wsdl:part element="impl:inToCmResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="monthsToDaysResponse">
+
+      <wsdl:part element="impl:monthsToDaysResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="kmToMiRequest">
+
+      <wsdl:part element="impl:kmToMi" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToInResponse">
+
+      <wsdl:part element="impl:ftToInResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dummyMethodResponse">
+
+      <wsdl:part element="impl:dummyMethodResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToMResponse">
+
+      <wsdl:part element="impl:ftToMResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cmToInRequest">
+
+      <wsdl:part element="impl:cmToIn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToMRequest">
+
+      <wsdl:part element="impl:ftToM" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToInRequest">
+
+      <wsdl:part element="impl:ftToIn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="inToCmRequest">
+
+      <wsdl:part element="impl:inToCm" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="miToFtRequest">
+
+      <wsdl:part element="impl:miToFt" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToMiRequest">
+
+      <wsdl:part element="impl:ftToMi" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="miToKmRequest">
+
+      <wsdl:part element="impl:miToKm" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="ftToMiResponse">
+
+      <wsdl:part element="impl:ftToMiResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="inToFtResponse">
+
+      <wsdl:part element="impl:inToFtResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mToFtResponse">
+
+      <wsdl:part element="impl:mToFtResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="kmToMiResponse">
+
+      <wsdl:part element="impl:kmToMiResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mToFtRequest">
+
+      <wsdl:part element="impl:mToFt" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="inToFtRequest">
+
+      <wsdl:part element="impl:inToFt" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="weeksToYearsResponse">
+
+      <wsdl:part element="impl:weeksToYearsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dummyMethodRequest">
+
+      <wsdl:part element="impl:dummyMethod" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Soap">
+
+      <wsdl:operation name="cmToIn">
+
+         <wsdl:input message="impl:cmToInRequest" name="cmToInRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cmToInResponse" name="cmToInResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="kmToMi">
+
+         <wsdl:input message="impl:kmToMiRequest" name="kmToMiRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:kmToMiResponse" name="kmToMiResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="dummyMethod">
+
+         <wsdl:input message="impl:dummyMethodRequest" name="dummyMethodRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:dummyMethodResponse" name="dummyMethodResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToMi">
+
+         <wsdl:input message="impl:ftToMiRequest" name="ftToMiRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:ftToMiResponse" name="ftToMiResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="miToFt">
+
+         <wsdl:input message="impl:miToFtRequest" name="miToFtRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:miToFtResponse" name="miToFtResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToIn">
+
+         <wsdl:input message="impl:ftToInRequest" name="ftToInRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:ftToInResponse" name="ftToInResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="inToFt">
+
+         <wsdl:input message="impl:inToFtRequest" name="inToFtRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:inToFtResponse" name="inToFtResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToM">
+
+         <wsdl:input message="impl:ftToMRequest" name="ftToMRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:ftToMResponse" name="ftToMResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mToFt">
+
+         <wsdl:input message="impl:mToFtRequest" name="mToFtRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mToFtResponse" name="mToFtResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="daysToMonths">
+
+         <wsdl:input message="impl:daysToMonthsRequest" name="daysToMonthsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:daysToMonthsResponse" name="daysToMonthsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="monthsToDays">
+
+         <wsdl:input message="impl:monthsToDaysRequest" name="monthsToDaysRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:monthsToDaysResponse" name="monthsToDaysResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="miToKm">
+
+         <wsdl:input message="impl:miToKmRequest" name="miToKmRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:miToKmResponse" name="miToKmResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="weeksToYears">
+
+         <wsdl:input message="impl:weeksToYearsRequest" name="weeksToYearsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:weeksToYearsResponse" name="weeksToYearsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="inToCm">
+
+         <wsdl:input message="impl:inToCmRequest" name="inToCmRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:inToCmResponse" name="inToCmResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="yearsToWeeks">
+
+         <wsdl:input message="impl:yearsToWeeksRequest" name="yearsToWeeksRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:yearsToWeeksResponse" name="yearsToWeeksResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SoapSoapBinding" type="impl:Soap">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="cmToIn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cmToInRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cmToInResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="kmToMi">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="kmToMiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="kmToMiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="dummyMethod">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="dummyMethodRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="dummyMethodResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToMi">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ftToMiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ftToMiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="miToFt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="miToFtRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="miToFtResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToIn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ftToInRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ftToInResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="inToFt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="inToFtRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="inToFtResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ftToM">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ftToMRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ftToMResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="mToFt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mToFtRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mToFtResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="daysToMonths">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="daysToMonthsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="daysToMonthsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="monthsToDays">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="monthsToDaysRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="monthsToDaysResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="miToKm">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="miToKmRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="miToKmResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="weeksToYears">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="weeksToYearsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="weeksToYearsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="inToCm">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="inToCmRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="inToCmResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="yearsToWeeks">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="yearsToWeeksRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="yearsToWeeksResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SoapService">
+
+      <wsdl:port binding="impl:SoapSoapBinding" name="Soap">
+
+         <wsdlsoap:address location="http://localhost:8080/Lab5/services/Soap"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

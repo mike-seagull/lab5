@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SoapService WSDL service -->
+
+  <service name="Soap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://lab5"/>
+      <parameter name="wsdlServiceElement" value="SoapService"/>
+      <parameter name="schemaQualified" value="http://lab5"/>
+      <parameter name="wsdlServicePort" value="Soap"/>
+      <parameter name="className" value="lab5.Soap"/>
+      <parameter name="wsdlPortType" value="Soap"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cmToIn" qname="operNS:cmToIn" returnQName="retNS:cmToInReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cm" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="kmToMi" qname="operNS:kmToMi" returnQName="retNS:kmToMiReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:km" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="dummyMethod" qname="operNS:dummyMethod" returnQName="retNS:dummyMethodReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="ftToMi" qname="operNS:ftToMi" returnQName="retNS:ftToMiReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ft" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="miToFt" qname="operNS:miToFt" returnQName="retNS:miToFtReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mi" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="ftToIn" qname="operNS:ftToIn" returnQName="retNS:ftToInReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ft" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="inToFt" qname="operNS:inToFt" returnQName="retNS:inToFtReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:in" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="ftToM" qname="operNS:ftToM" returnQName="retNS:ftToMReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ft" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="mToFt" qname="operNS:mToFt" returnQName="retNS:mToFtReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:m" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="daysToMonths" qname="operNS:daysToMonths" returnQName="retNS:daysToMonthsReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:days" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="monthsToDays" qname="operNS:monthsToDays" returnQName="retNS:monthsToDaysReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:months" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="miToKm" qname="operNS:miToKm" returnQName="retNS:miToKmReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mi" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="weeksToYears" qname="operNS:weeksToYears" returnQName="retNS:weeksToYearsReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:weeks" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="inToCm" qname="operNS:inToCm" returnQName="retNS:inToCmReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:inches" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://lab5" xmlns:retNS="http://lab5" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="yearsToWeeks" qname="operNS:yearsToWeeks" returnQName="retNS:yearsToWeeksReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://lab5" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:years" type="tns:double"/>
+      </operation>
+      <parameter name="allowedMethods" value="kmToMi weeksToYears inToCm daysToMonths miToFt inToFt dummyMethod mToFt ftToIn miToKm ftToM yearsToWeeks cmToIn ftToMi monthsToDays"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,105 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="/Users/michaelhollister/workplace/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/Lab5/WEB-INF/attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="Soap" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="cmToIn" qname="ns1:cmToIn" returnQName="ns1:cmToInReturn" returnType="xsd:double" soapAction="" xmlns:ns1="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:cm" type="xsd:double"/>
+  </ns2:operation>
+  <ns1:operation name="kmToMi" qname="ns2:kmToMi" returnQName="ns2:kmToMiReturn" returnType="xsd:double" soapAction="" xmlns:ns2="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:km" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="dummyMethod" qname="ns3:dummyMethod" returnQName="ns3:dummyMethodReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="ftToMi" qname="ns4:ftToMi" returnQName="ns4:ftToMiReturn" returnType="xsd:double" soapAction="" xmlns:ns4="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:ft" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="miToFt" qname="ns5:miToFt" returnQName="ns5:miToFtReturn" returnType="xsd:double" soapAction="" xmlns:ns5="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:mi" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="ftToIn" qname="ns6:ftToIn" returnQName="ns6:ftToInReturn" returnType="xsd:double" soapAction="" xmlns:ns6="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:ft" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="inToFt" qname="ns7:inToFt" returnQName="ns7:inToFtReturn" returnType="xsd:double" soapAction="" xmlns:ns7="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:in" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="ftToM" qname="ns8:ftToM" returnQName="ns8:ftToMReturn" returnType="xsd:double" soapAction="" xmlns:ns8="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:ft" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="mToFt" qname="ns9:mToFt" returnQName="ns9:mToFtReturn" returnType="xsd:double" soapAction="" xmlns:ns9="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns9:m" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="daysToMonths" qname="ns10:daysToMonths" returnQName="ns10:daysToMonthsReturn" returnType="xsd:double" soapAction="" xmlns:ns10="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns10:days" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="monthsToDays" qname="ns11:monthsToDays" returnQName="ns11:monthsToDaysReturn" returnType="xsd:double" soapAction="" xmlns:ns11="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns11:months" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="miToKm" qname="ns12:miToKm" returnQName="ns12:miToKmReturn" returnType="xsd:double" soapAction="" xmlns:ns12="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:mi" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="weeksToYears" qname="ns13:weeksToYears" returnQName="ns13:weeksToYearsReturn" returnType="xsd:double" soapAction="" xmlns:ns13="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns13:weeks" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="inToCm" qname="ns14:inToCm" returnQName="ns14:inToCmReturn" returnType="xsd:double" soapAction="" xmlns:ns14="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:inches" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="yearsToWeeks" qname="ns15:yearsToWeeks" returnQName="ns15:yearsToWeeksReturn" returnType="xsd:double" soapAction="" xmlns:ns15="http://lab5" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns15:years" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="kmToMi weeksToYears inToCm daysToMonths miToFt inToFt dummyMethod mToFt ftToIn miToKm ftToM yearsToWeeks cmToIn ftToMi monthsToDays"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Soap"/>
+  <ns1:parameter name="className" value="lab5.Soap"/>
+  <ns1:parameter name="wsdlServicePort" value="Soap"/>
+  <ns1:parameter name="schemaQualified" value="http://lab5"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://lab5"/>
+  <ns1:parameter name="wsdlServiceElement" value="SoapService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>
